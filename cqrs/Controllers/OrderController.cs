@@ -19,10 +19,10 @@ public class OrderController: ControllerBase
     }
 
     [HttpPost]
-    public void AddItemToOrder([FromBody]OrderItem order, [FromQuery] Guid orderId)
+    public void AddItemToOrder([FromBody]OrderItem orderItem )
     {
-        _commandHandler.HandleAddItemToOrder(orderId, order?.ProductName??"", order?.Quantity??0, 
-            order?.PricePerUnit??0);
+        _commandHandler.HandleAddItemToOrder(orderItem.OrderId, orderItem.ProductName, 
+            orderItem.Quantity, orderItem.PricePerUnit);
     }
 
     [HttpGet("{orderId}")]

@@ -1,6 +1,19 @@
-@cqrs_HostAddress = http://localhost:5049
+@cqrs_HostAddress = https://localhost:7155
 
-GET {{cqrs_HostAddress}}/weatherforecast/
+GET {{cqrs_HostAddress}}/api/Users/a50d6820-fcda-4129-abd4-5caa2729bf2a?page=3
 Accept: application/json
+
+###
+
+POST {{cqrs_HostAddress}}/api/Users/
+Accept: application/json
+Content-Type: application/json
+
+{
+  "firstName": "Di",
+  "lastName": "Di",
+  "email": "di@gmail.com"
+}
+
 
 ###

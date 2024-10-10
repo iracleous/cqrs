@@ -2,7 +2,8 @@
 
 namespace cqrs.Events;
 
-public interface IEventStore
+public interface IEventStore<T, K>
 {
-
+    void SaveEvent(T tEvent);
+    IEnumerable<T> GetEvents(K tId);
 }
